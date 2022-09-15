@@ -1,1185 +1,541 @@
 <!DOCTYPE html>
-<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title> Parves Shikder</title>
-  <link rel="shortcut icon" type="image/jpg" href="https://drive.google.com/uc?id=1zJ3oIlrVFeqzNG6Jd5WV8F_ZXV5sUBBg" />
-
-  <!-- Fontawesome CDN Link -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" rel="stylesheet">
-
-
-
-  <style>
-    /* Google Font CDN Link */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
-
-    .myhover:hover {
-      opacity: 0.5;
-    }
-
-
-    html,
-    body {
-      scroll-behavior: smooth;
-      overflow-x: hidden !important;
-      width: 100 vw !important;
-    }
-    #navbar-iframe {
-      height:0px;
-      visibility:hidden;
-      display:none;
-      }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      line-height: 1.2;
-    }
-
-
-    .container {
-      max-width: 1170px;
-      margin: auto;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    img {
-      max-width: 100%;
-      vertical-align: middle;
-    }
-
-    /*.gallery*/
-    .gallery {
-      width: 100%;
-      display: block;
-      min-height: 100vh;
-      background-color: #F0F8FF;
-      padding: 100px 0;
-    }
-
-    .gallery .gallery-filter {
-      padding: 0 15px;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .gallery .gallery-filter .filter-item {
-      color: #0E2431;
-      font-size: 18px;
-      text-transform: uppercase;
-      display: inline-block;
-      margin: 0 10px;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      line-height: 1.2;
-      transition: all 0.3s ease;
-    }
-
-    .gallery .gallery-filter .filter-item.active {
-      color: #4070f4;
-      border-color: #4070f4;
-    }
-
-    .gallery .gallery-item {
-      width: calc(100% / 3);
-      padding: 15px;
-    }
-
-    .gallery .gallery-item-inner img {
-      width: 100%;
-    }
-
-    .gallery .gallery-item.show {
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    .gallery .gallery-item.hide {
-      display: none;
-    }
-
-    /*responsive*/
-    @media(max-width: 991px) {
-      .gallery .gallery-item {
-        width: 50%;
-      }
-    }
-
-    @media(max-width: 767px) {
-      .gallery .gallery-item {
-        width: 100%;
-      }
-
-      .gallery .gallery-filter .filter-item {
-        margin-bottom: 10px;
-      }
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      text-decoration: none;
-      scroll-behavior: smooth;
-    }
-
-    /* Custom Scroll Bar CSS */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #f1f1f1;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #6e93f7;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #4070f4;
-    }
-
-    /* navbar styling */
-    nav {
-      position: fixed;
-      width: 100%;
-      padding: 20px 0;
-      z-index: 998;
-      transition: all 0.3s ease;
-      font-family: 'Ubuntu', sans-serif;
-    }
-
-    nav.sticky {
-      background: #4070f4;
-      padding: 13px 0;
-    }
-
-    nav .navbar {
-      width: 90%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: auto;
-    }
-
-    nav .navbar .logo a {
-      font-weight: 500;
-      font-size: 35px;
-      color: #4070f4;
-    }
-
-    nav.sticky .navbar .logo a {
-      color: #fff;
-    }
-
-    nav .navbar .menu {
-      display: flex;
-      position: relative;
-    }
-
-    nav .navbar .menu li {
-      list-style: none;
-      margin: 0 8px;
-    }
-
-    .navbar .menu a {
-      font-size: 18px;
-      font-weight: 500;
-      color: #0E2431;
-      padding: 6px 0;
-      transition: all 0.4s ease;
-    }
-
-    .navbar .menu a:hover {
-      color: #4070f4;
-    }
-
-    nav.sticky .menu a {
-      color: #FFF;
-    }
-
-    nav.sticky .menu a:hover {
-      color: #0E2431;
-    }
-
-    .navbar .media-icons a {
-      color: #4070f4;
-      font-size: 18px;
-      margin: 0 6px;
-    }
-
-    nav.sticky .media-icons a {
-      color: #FFF;
-    }
-
-    /* Side Navigation Menu Button CSS */
-    nav .menu-btn,
-    .navbar .menu .cancel-btn {
-      position: absolute;
-      color: #fff;
-      right: 30px;
-      top: 20px;
-      font-size: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      display: none;
-    }
-
-    nav .menu-btn {
-      color: #4070f4;
-    }
-
-    nav.sticky .menu-btn {
-      color: #FFF;
-    }
-
-    .navbar .menu .menu-btn {
-      color: #fff;
-    }
-
-    /* home section styling */
-    .home {
-      height: 100vh;
-      width: 100%;
-      background: url("https://drive.google.com/uc?id=1pbOWp6Px0M2eZaXqONbPMoAnT6T4tBPk") no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      font-family: 'Ubuntu', sans-serif;
-    }
-
-    .home .home-content {
-      width: 90%;
-      height: 100%;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .home .text-one {
-      font-size: 25px;
-      color: #0E2431;
-    }
-
-    .home .text-two {
-      color: #0E2431;
-      font-size: 75px;
-      font-weight: 600;
-      margin-left: -3px;
-    }
-
-    .home .text-three {
-      font-size: 40px;
-      margin: 5px 0;
-      color: #4070f4;
-    }
-
-    .home .text-four {
-      font-size: 23px;
-      margin: 5px 0;
-      color: #0E2431;
-    }
-
-    .home .button {
-      margin: 14px 0;
-    }
-
-    .home .button button {
-      outline: none;
-      padding: 8px 16px;
-      border-radius: 6px;
-      font-size: 25px;
-      font-weight: 400;
-      background: #4070f4;
-      color: #fff;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: all 0.4s ease;
-    }
-
-    .home .button button:hover {
-      border-color: #4070f4;
-      background-color: #fff;
-      color: #4070f4;
-    }
-
-    /* About Section Styling */
-    /* Those Elements Where We Have Apply Same CSS,
- I'm Selecting Directly 'Section Tag' and 'Class'  */
-    section {
-      padding-top: 40px;
-    }
-
-    section .content {
-      width: 80%;
-      margin: 40px auto;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .about .about-details {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    section .title {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-
-    section .title span {
-      color: #0E2431;
-      font-size: 30px;
-      font-weight: 600;
-      position: relative;
-      padding-bottom: 8px;
-    }
-
-    section .title span::before,
-    section .title span::after {
-      content: '';
-      position: absolute;
-      height: 3px;
-      width: 100%;
-      background: #4070f4;
-      left: 0;
-      bottom: 0;
-    }
-
-    section .title span::after {
-      bottom: -7px;
-      width: 70%;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .about .about-details .left {
-      width: 45%;
-    }
-
-    .about .left img {
-      height: 400px;
-      width: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .about-details .right {
-      width: 55%;
-    }
-
-    section .topic {
-      color: #0E2431;
-      font-size: 25px;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-
-    .about-details .right p {
-      text-align: justify;
-      color: #0E2431;
-    }
-
-    section .button {
-      margin: 16px 0;
-    }
-
-    section .button button {
-      outline: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 25px;
-      font-weight: 400;
-      background: #4070f4;
-      color: #fff;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: all 0.4s ease;
-    }
-
-    section .button button:hover {
-      border-color: #4070f4;
-      background-color: #fff;
-      color: #4070f4;
-    }
-
-    /* My Skills CSS */
-    .skills {
-      background: #F0F8FF;
-    }
-
-    .skills .content {
-      padding: 40px 0;
-    }
-
-    .skills .skills-details {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .skills-details .text {
-      width: 50%;
-    }
-
-    .skills-details p {
-      color: #0E2431;
-      text-align: justify;
-    }
-
-    .skills .skills-details .experience {
-      display: flex;
-      align-items: center;
-      margin: 0 10px;
-    }
-
-    .skills-details .experience .num {
-      color: #0E2431;
-      font-size: 80px;
-    }
-
-    .skills-details .experience .exp {
-      color: #0E2431;
-      margin-left: 20px;
-      font-size: 18px;
-      font-weight: 500;
-      margin: 0 6px;
-    }
-
-    .skills-details .boxes {
-      width: 45%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .skills-details .box {
-      width: calc(100% / 2 - 20px);
-      margin: 20px 0;
-    }
-
-    .skills-details .boxes .topic {
-      font-size: 20px;
-      color: #4070f4;
-    }
-
-    .skills-details .boxes .per {
-      font-size: 60px;
-      color: #4070f4;
-    }
-
-    /* My Services CSS */
-    .services .boxes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    .services .boxes .box {
-      margin: 20px 0;
-      width: calc(100% / 3 - 20px);
-      text-align: center;
-      border-radius: 12px;
-      padding: 30px 10px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-      cursor: default;
-      transition: all 0.4s ease;
-    }
-
-    .services .boxes .box:hover {
-      background: #4070f4;
-      color: #fff;
-    }
-
-    .services .boxes .box .icon {
-      height: 50px;
-      width: 50px;
-      background: #4070f4;
-      border-radius: 50%;
-      text-align: center;
-      line-height: 50px;
-      font-size: 18px;
-      color: #fff;
-      margin: 0 auto 10px auto;
-      transition: all 0.4s ease;
-    }
-
-    .boxes .box:hover .icon {
-      background-color: #fff;
-      color: #4070f4;
-    }
-
-    .services .boxes .box:hover .topic,
-    .services .boxes .box:hover p {
-      color: #0E2431;
-      transition: all 0.4s ease;
-    }
-
-    .services .boxes .box:hover .topic,
-    .services .boxes .box:hover p {
-      color: #fff;
-    }
-
-    /* Contact Me CSS */
-    .contact {
-      background: #fff;
-    }
-
-    .contact .content {
-      margin: 0 auto;
-      padding: 30px 0;
-    }
-
-    .contact .text {
-      width: 60%;
-      text-align: center;
-      margin: auto;
-    }
-
-    /* Footer CSS */
-    footer {
-      background: #4070f4;
-      padding: 15px 0;
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    footer .text span {
-      font-size: 17px;
-      font-weight: 400;
-      color: #fff;
-    }
-
-    footer .text span a {
-      font-weight: 500;
-      color: #FFF;
-    }
-
-    footer .text span a:hover {
-      text-decoration: underline;
-    }
-
-    /* Scroll TO Top Button CSS */
-    .scroll-button a {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      color: #fff;
-      background: #4070f4;
-      padding: 7px 12px;
-      ;
-      font-size: 18px;
-      border-radius: 6px;
-      box-shadow: rgba(0, 0, 0, 0.15);
-      display: none;
-    }
-
-    /* Responsive Media Query */
-    @media (max-width: 1190px) {
-      section .content {
-        width: 85%;
-      }
-    }
-
-    @media (max-width: 1000px) {
-      .about .about-details {
-        justify-content: center;
-        flex-direction: column;
-      }
-
-      .about .about-details .left {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-      }
-
-      .about-details .right {
-        width: 90%;
-        margin: 40px 0;
-      }
-
-      .services .boxes .box {
-        margin: 20px 0;
-        width: calc(100% / 2 - 20px);
-      }
-    }
-
-    @media (max-width: 900px) {
-      .about .left img {
-        height: 350px;
-        width: 350px;
-      }
-    }
-
-    @media (max-width: 750px) {
-      nav .navbar {
-        width: 90%;
-      }
-
-      nav .navbar .menu {
-        position: fixed;
-        left: -100%;
-        top: 0;
-        background: #0E2431;
-        height: 100vh;
-        max-width: 400px;
-        width: 100%;
-        padding-top: 60px;
-        flex-direction: column;
-        align-items: center;
-        transition: all 0.5s ease;
-      }
-
-      .navbar.active .menu {
-        left: 0;
-      }
-
-      nav .navbar .menu a {
-        font-size: 23px;
-        display: block;
-        color: #fff;
-        margin: 10px 0;
-      }
-
-      nav.sticky .menu a:hover {
-        color: #4070f4;
-      }
-
-      nav .navbar .media-icons {
-        display: none;
-      }
-
-      nav .menu-btn,
-      .navbar .menu .cancel-btn {
-        display: block;
-      }
-
-      .home .text-two {
-        margin-top: 10px;
-        font-size: 65px;
-      }
-
-      .home .text-three {
-        font-size: 35px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-
-      .skills .skills-details {
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-
-      .skills-details .text {
-        width: 100%;
-        margin-bottom: 50px;
-      }
-
-      .skills-details .boxes {
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-      }
-
-      .services .boxes .box {
-        margin: 20px 0;
-        width: 100%;
-      }
-
-      .contact .text {
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 500px) {
-      .home .text-two {
-        font-size: 55px;
-      }
-
-      .home .text-three {
-        font-size: 33px;
-      }
-
-      .skills-details .boxes .per {
-        font-size: 50px;
-        color: #4070f4;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<title>Parves Shikder - Resume / Personal Portfolio</title>
+<link rel="shortcut icon" href="favicon.ico">
+
+<!-- Google Font-->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,900,900italic,700italic%7COswald:400,300,700' rel='stylesheet' type='text/css'>
+<!-- Design Style -->
+<link rel="stylesheet" type="text/css" href="css/scroll.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!-- Icon -->
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+<!-- Portfolio Thumbnail / Slider -->
+<link rel="stylesheet" type="text/css" href="css/portfolio.css" />
+<link rel="stylesheet" type="text/css" href="css/carousel.css">
+<!-- Responsive -->
+<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+<!-- Pie Chart / Skills -->
+<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
+<!-- Send Email -->
+<script type="text/javascript" src="js/sendemail.js"></script>
+<!-- Progressbar / Skills-->
+<script type="text/javascript" src="js/progressbar.js"></script>
+<!-- Portfolio-->
+<script src="js/modernizr.custom.js"></script>
 </head>
-
-
-
-
-<!-- https://drive.google.com/uc?id=1pbOWp6Px0M2eZaXqONbPMoAnT6T4tBPk -->
-<!-- https://drive.google.com/uc?id=15hiqovSUJ-uZ1E8Acx5hOcx_mIPot6xj -->
-<!-- https://drive.google.com/uc?id=1zJ3oIlrVFeqzNG6Jd5WV8F_ZXV5sUBBg -->
-
 <body>
-  <!-- Move to up button -->
-  <div class="scroll-button">
-    <a href="#home"><i class="fas fa-arrow-up"></i></a>
-  </div>
-  <!-- navgaition menu -->
-  <nav>
-    <div class="navbar">
-      <div class="logo"><a style="text-decoration: none; margin-left: -13px;" href="#home">Parves.</a></div>
-      <ul class=" menu">
-        <li><a style="text-decoration: none;" href="#home">Home</a></li>
-        <li><a style="text-decoration: none;" href="#about">About</a></li>
-        <li><a style="text-decoration: none;" href="#skills">Skills</a></li>
-        <li><a style="text-decoration: none;" href="#services">Services</a></li>
-        <li><a style="text-decoration: none;" href="#portfolio">Portfolio</a></li>
-        <li><a style="text-decoration: none;" href="#contact">Contact</a></li>
-        <div class="cancel-btn">
-          <i class="fas fa-times"></i>
+<div id="container" class="container"> 
+  <!-- Left Menu / Logo-->
+  <aside class="menu" id="menu">
+    <div class="logo"> 
+      <!-- Logo image--> 
+      <img src="images/logo.png" width="140" height="140" alt=""/> 
+      <!-- Logo name--> 
+      <span>Parves Shikder</span></div>
+    <!-- Mobile Navigation--> 
+    <a href="#menu1" class="menu-link"></a> 
+    <!-- Left Navigation-->
+    <nav id="menu1" role="navigation"> <a href="#chapterintroduction"><span id="link_introduction" class="active">Home</span></a> <a href="#chapterabout"><span id="link_about">About</span></a> <a href="#chapterskills"><span id="link_skills">Skills</span></a> <a href="#chapterexperience"><span id="link_experience">Experience</span></a> <a href="#chaptereducation"><span id="link_education">Education</span></a> <a href="#chapterportfolio"><span id="link_portfolio">Portfolio</span></a><a href="#chaptercontact"><span id="link_contact">Contact</span></a></nav>
+
+
+    <div class="social">
+       <a style="padding: 0px 10px ;" href="https://www.youtube.com/channel/UCqpky7W7w4l7tGmekaPtz-A/videos" target="_blank" class="youtube"><i class="fa fa-youtube">
+
+        
+       </i></a> <a style="padding: 0px 10px ;" href="https://www.linkedin.com/in/parvesshikder/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a> 
+       
+       
+       <a style="padding: 0px 10px ;" href="https://www.linkedin.com/in/parvesshikder/" target="_blank" class="github"><i class="fa fa-github"></i></a> </div>
+
+ 
+
+    
+    <div class="copyright"> © Parves Shikder.<br>
+      All Rights Reserved. </div>
+  </aside>
+  <!-- Go to top link for mobile device --> 
+  <a href="#menu" class="totop-link">Go to the top</a>
+  <div class="content-scroller">
+    <div class="content-wrapper"> 
+      
+      <!-- Introduction -->
+      <article class="content introduction noscroll" id="chapterintroduction">
+        <div class="inner">
+          <h2 style="margin-top:-20px"><span>HEllo, I'm</span><br>
+            Parves Shikder</h2>
+          <span class="title">Mobile App Developer</span> </div>
+        <div id="owl-demo" class="owl-carousel">
+          
+           <div class="item" style="margin-top:30px"><img src="images/hero.png" alt="" /></div>
+          
         </div>
-      </ul>
-
-      <div class="media-icons">
-
-        <div class="gallery-item headphone">
-          <div class="gallery-item-inner">
-            <p class="text-center">
-              <a href="#headerPopup" id="headerVideoLink5" class="popup-modal">
-                <i class="fab fa-youtube myhover"></i></a>
-
+      </article>
+      
+      <!-- About -->
+      <article class="content about white-bg" id="chapterabout">
+        <div class="inner">
+          <h2>About</h2>
+          <div class="title-divider"></div>
+          <div class="about-con">
+            <ul>
+              <li>Name: Md Parves Shikder</li>
+              <li>Email: <a href="mailto:shikder.parves@live.iium.edu.my">shikder.parves@live.iium.edu.my</a></li>
+              <li>Phone: (+60) 11-27155650</li>
+              <li>Date of birth: 11 December, 1998</li>
+              <li>Address: UIA Gombak, 53100, Selangor</li>
+              <li>Nationality: Bangladeshi</li>
+            </ul>
+            <h3>Summary</h3>
+            <p>4th-year Computer Science student
+              passionate about Mobile Application
+              development. Developed several
+              mini projects, including a real
+              mobile app, using Flutter from
+              scratch. Proficient in a range of
+              modern technologies including Dart,
+              Flutter, Firebase, Java and Front-end Web Technologies. Highlymotivated CS student, who likes to
+              take initiative and seek out new
+              challenges.
+              <br>
             </p>
-            <div id="headerPopup" class="mfp-hide embed-responsive embed-responsive-21by9">
-              <iframe class="embed-responsive-item" width="854" height="480"
-                src="https://www.youtube.com/embed/zW7v0jK562s" frameborder="0" allow="encrypted-media"
-                allowfullscreen></iframe>
+            <a href="file/resume_parves_shikder.pdf" download="parves_shikder_resume.pdf" target="_blank" class="button">Download resume as PDF format</a> <img src="#" class="signature" alt="" /> </div>
+        </div>
+      </article>
+      
+      <!-- Skills -->
+      <article class="content skills gray-bg" id="chapterskills">
+        <div class="inner">
+          <h2>Skills</h2>
+          <div class="title-divider"></div>
+          <h3>Areas of Expertise</h3>
+          <p>Flutter is something I love. I prefer this wonderful technology for creating mobile apps.</p>
+          <div class="skills-con">
+            <div class="container-sub margin-top50">
+              <div class="row">
+                <div class="col-6 margin-bottom50">
+                  <div class="col-6"><span class="chart" data-percent="80"><span class="percent"></span> </span></div>
+                  <div class="col-6 chart-text">
+                    <h4>Flutter</h4>
+                    <p>Competent , 1 years</p>
+                  </div>
+                </div>
+                <div class="col-6 margin-bottom50">
+                  <div class="col-6"><span class="chart" data-percent="85"><span class="percent"></span> </span></div>
+                  <div class="col-6 chart-text">
+                    <h4>Dart</h4>
+                    <p>Proficient , 1 years</p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="col-6"><span class="chart" data-percent="80"><span class="percent"></span> </span></div>
+                  <div class="col-6 chart-text">
+                    <h4>Firebase</h4>
+                    <p>Advanced Beginner , 1 years</p>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="col-6"><span class="chart" data-percent="85"><span class="percent"></span> </span></div>
+                  <div class="col-6 chart-text">
+                    <h4>Front-end Web Tech</h4>
+                    <p>Proficient , 2 years + </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="full-divider"></div>
+            <div class="container-sub skill-list">
+              <div class="row">
+                <h3>Knowledge, Skills, And Abilities</h3>
+                <p></p>
+                <div class="col-4 margin-top10">
+                  <ul>
+                    <li>Software Requirements Engineering</li>
+                    <li>Software Design and Architecture</li>
+                    <li>Software Project Management</li>
+                    <li>Software Testing</li>
+                  </ul>
+                </div>
+                <div class="col-4 margin-top10">
+                  <ul>
+                    <li>Blockchain Technology</li>
+                    <li>UI/UX Design</li>
+                    <li>Software Development Life Cycle (SDLC) </li>
+                    <li>GIT/Version control</li>
+                  </ul>
+                </div>
+                <div class="col-4 margin-top10">
+                  <ul>
+                    <li>Adaptability</li>
+                    <li>Collaboration</li>
+                    <li>Communication</li>
+                    <li>Self-motivation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="full-divider"></div>
+            <div class="container-sub">
+              <div class="row">
+                <h3>Language Skills</h3>
+                <p></p>
+                <div class="progressbar-main margin-top50">
+                  <div class="progress-bar-description">Bangla - Native</div>
+                  <div id="progressBar" class="progress">
+                    <div class="progress-value"></div>
+                  </div>
+                </div>
+                <div class="progressbar-main margin-top40">
+                  <div class="progress-bar-description">English - Limited working proficiency</div>
+                  <div id="progressBar2" class="progress">
+                    <div class="progress-value"></div>
+                  </div>
+                </div>
+                <div class="progressbar-main margin-top40">
+                  <div class="progress-bar-description">Bahasa Melayu - Basic</div>
+                  <div id="progressBar3" class="progress">
+                    <div class="progress-value"></div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </article>
+      
+      <!-- Experience -->
+      <article class="content experience white-bg" id="chapterexperience">
+        <div class="inner">
+          <h2>Experience</h2>
+          <div class="title-divider"></div>
+          <h3>5 Months Experience as UI/UX Designer</h3>
+          <p></p>
+          <div class="experience-con">
+            <div class="container-sub">
+              <div class="full-divider"></div>
+              <div class="row">
+                <div class="experience-details">
+                  <div class="col-6 margin-bottom50 margin-top50">
+                    <div style="margin-right: 15px;" class="col-3 icon-block"><img src="images/fiverr-1.svg" alt=""></div>
+                    <div class="flot-left">
+                      <h5>Fiverr.com</h5>
+                      <h4>Freelance UI/UX Des</h4>
+                      <span>Nov, 2021 - Mar, 2022</span> </div>
+                  </div>
+                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top"> Worked on several client projects and designed mobile app UI based on client requirements using the Figma design tool. </div>
+                </div>
+                
+              
+                
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="menu-btn">
-      <i style="margin-top: 15px;" class="fas fa-bars"></i>
-    </div>
-  </nav>
-
-  <!-- Home Section Start -->
-  <section class="home" id="home">
-    <div class="home-content">
-      <div class="text">
-        <div class="text-one">Hello,</div>
-        <div class="text-two">I'm Parves Shikder</div>
-        <div class="text-three">UI/UX Designer & Mobile App Developer</div>
-        <!-- <div class="text-four">From Malaysia</div> -->
-      </div>
-      <div class="button">
-        
-            <a href="https://www.upwork.com/freelancers/~01fc262ce231cb9e9c">
-                <button> Hire Me </button>
-            </a>
-            
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section Start -->
-  <section class="about" id="about">
-    <div class="content">
-      <div class="title"><span>About Me</span></div>
-      <div class="about-details">
-        <div class="left">
-          <img src="https://drive.google.com/uc?id=18i3l7qt6V719L89QFw-yPE7J1cMg3kPt" alt="">
-        </div>
-        <div class="right">
-          <div class="topic">I love Coding and Designing Mobile Apps</div>
-          <p>Hello there. My name is Parves. I'm a mobile UI/UX Designer and Flutter Mobile App Developer. Working for more than a year, I've designed and build mobile applications for several businesses. If you ever require my assistance, please don't hesitate to contact me at any time.
-          </p>
-          <div class="button">
-              <a href="https://www.upwork.com/freelancers/~01fc262ce231cb9e9c">
-            <button>Let's Chat</button>
-        </a>
+      </article>
+      
+      <!-- Education -->
+      <article class="content education gray-bg" id="chaptereducation">
+        <div class="inner">
+          <h2>Education</h2>
+          <div class="title-divider"></div>
+          <h3>International Islamic University Malaysia (IIUM)</h3>
+          <p>Bachelor of Computer Science</p>
+          <div class="education-con">
+            <div class="container-sub">
+              <!-- <div class="full-divider"></div> -->
+              <div class="row">
+                <div class="education-details">
+                  <div class="col-6 margin-bottom50 margin-top50">
+                    <div style="margin-right: 10px;" class="col-3 icon-block"><img src="images/logo-IIUM-ori (1).png" alt=""></div>
+                    <div class="flot-left">
+                      <h5>CGPA 3.59</h5>
+                      <!-- <h4>Bachelor of CS</h4> -->
+                      <span>2018 - Present</span> </div>
+                  </div>
+                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top"> 
+                    >> Majoring in Software Engineering <br>
+                    >> KICT Dean's List for 5 semesters <br>
+                    >> Winner of the BRONZE AWARD at the KICT Final Year Project (FYP) Showcase <br>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </article>
+      
+      <!-- Pportfolio -->
+      <article class="content portfolio white-bg" id="chapterportfolio">
+        <div class="inner">
+          <h2>Portfolio</h2>
+          <div class="title-divider"></div>
+          <h3>Hey There! Check Out My Portfolio</p>
+          <div class="portfolio-con">
+            <div class="container-sub margin-top50">
+              <div class="row">
+                <div id="grid-gallery" class="grid-gallery">
+                  <section class="grid-wrap">
+                    <ul class="grid">
+                      <li>
+                        <figure> <img src="images/steko.png" alt=""/>
+                          <figcaption>
+                            <div class="figcaption-details"> <img src="images/logo_steo.png" height="82" width="110" alt="" />
+                              <h3>Steko Health Checker</h3>
+                              <span>Mobile Application (Flutter, Firebase)</span> </div>
+                          </figcaption>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure> <img src="images/findme_prop.png" alt=""/>
+                          <figcaption>
+                            <div class="figcaption-details"> <img src="images/find_me_prLogo.png" height="82" width="82" alt="" />
+                              <h3>FindMeProp</h3>
+                              <span>Mobile App UI design on Figma</span> </div>
+                          </figcaption>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure> <img src="http://placehold.it/700x475" alt=""/>
+                          <figcaption>
+                            <div class="figcaption-details"> <img src="images/icon-plus.png" height="82" width="82" alt="" />
+                              <h3>Kayra Modelleri</h3>
+                              <span>Branding and Identity</span> </div>
+                          </figcaption>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure> <img src="http://placehold.it/700x475" alt=""/>
+                          <figcaption>
+                            <div class="figcaption-details"> <img src="images/icon-plus.png" height="82" width="82" alt="" />
+                              <h3>Fashion and You</h3>
+                              <span>APPS and Web Design</span> </div>
+                          </figcaption>
+                        </figure>
+                      </li>
+                      <li>
+                        <figure> <img src="http://placehold.it/700x475" alt=""/>
+                          <figcaption>
+                            <div class="figcaption-details"> <img src="images/icon-plus.png" height="82" width="82" alt="" />
+                              <h3>Whole Food Flour</h3>
+                              <span>Branding and Identity</span> </div>
+                          </figcaption>
+                        </figure>
+                      </li>
+                    </ul>
+                  </section>
+                  
+                  <!-- Lightbox Popup -->
+                  <section class="slideshow">
+                    <ul>
+                      <li>
+                        <figure>
+                          <figcaption>
+                            <h3>Steko Health Checker</h3>
+                            <span>Mobile Application Design & Development - Flutter, Dart, Firebase</span>
+                            <p>Steko Health Checker is a mobile application that enables remote monitoring for COVID-19 patients as well as health tracking for fitness enthusiasts. <br><br>
+                            
+                            Check out UI/UX design of this app : <button style="padding: 5px 10px; background-color: white; border: none;"> <a  style="color: green ;" href="https://bit.ly/3QLMNs5" target="_blank">View UI Design on Figma</a>  </button>
 
-  <!-- My Skill Section Start -->
-  <!-- Section Tag and Other Div will same where we need to put same CSS -->
-  <section class="skills" id="skills">
-    <div class="content">
-      <div class="title"><span>My Skills</span></div>
-      <div class="skills-details">
-        <div class="text">
-          <div class="topic">Skills Reflects Our Knowledge</div>
-          <p>I always use Figma for UI/UX design and Flutter for mobile app development. Figma is an all-in-one design
-            software and Flutter is one of the top technologies right now. It's a great choice for both iOS and Android.
-          </p>
-          <div class="experience">
-            <div class="num">1+</div>
-            <div class="exp">Years Of <br> Experience</div>
+                            <br> <br>
+                            Download APK: <button style="padding: 5px 10px; background-color: white; border: none;">
+                              <a style="color: green ;" href="https://bit.ly/3S40SSH" target="_blank">Download Now</a>
+                            </button>
+
+
+                            </p>
+                          </figcaption>
+                          <div id="owl-demo1" class="owl-carousel">
+                            <div class="item"><img src="images/steko.png" alt="" /></div>
+                            <div class="item"><img src="images/steko_com.png" alt="" /></div>
+                            
+                          </div>
+                        </figure>
+                      </li>
+
+                      <!--  -->
+                      <li>
+                        <figure>
+                          <figcaption>
+                            <h3>FindMeProp - Find Dream Property</h3>
+                            <span>Mobile App UI Design</span>
+                            <p>FindMeProp is a real estate app that helps the user in finding their ideal property. <br> <br>
+                            
+                              Check out UI/UX design of this app : <button style="padding: 5px 10px; background-color: white; border: none;">  <a  style="color: green ;" href="https://bit.ly/3Bmi9Qe" target="_blank">View UI Design on Figma</a> </button> <br>
+                          </figcaption>
+                          <iframe width="854" height="480" src="//www.youtube.com/embed/Mid6AMVEUyg" frameborder="0" allowfullscreen></iframe>
+                      </li>
+
+
+                      <!--  -->
+                      <li>
+                        <figure>
+                          <figcaption>
+                            <h3>Kayra Modelleri</h3>
+                            <span>Branding and Identity</span>
+                            <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                          </figcaption>
+                          <div id="owl-demo2" class="owl-carousel">
+                             <div class="item"><img src="http://placehold.it/700x475" alt="" /></div>
+                            <div class="item"><img src="http://placehold.it/700x475" alt="" /></div>
+                            <div class="item"><img src="http://placehold.it/700x475" alt="" /></div>
+                            <div class="item"><img src="http://placehold.it/700x475" alt="" /></div>
+                            <div class="item"><img src="http://placehold.it/700x475" alt="" /></div>
+                          </div>
+                        </figure>
+                      </li>
+
+
+                      <!--  -->
+                      <li>
+                        <figure>
+                          <figcaption>
+                            <h3>Fashion and You</h3>
+                            <span>APPS and Web Design</span>
+                            <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                          </figcaption>
+                          <iframe width="854" height="480" src="//www.youtube.com/embed/ZwzY1o_hB5Y" frameborder="0" allowfullscreen></iframe></figure>
+                      </li>
+
+
+                      <!--  -->
+                      <li>
+                        <figure>
+                          <figcaption>
+                            <h3>Whole Food Flour</h3>
+                            <span>Branding and Identity</span>
+                            <p>Kale chips lomo biodiesel stumptown Godard Tumblr, mustache sriracha tattooed cray aute slow-carb placeat delectus. Letterpress asymmetrical fanny pack art party est pour-over skateboard anim quis, ullamco craft beer.</p>
+                          </figcaption>
+                          <img src="http://placehold.it/700x475" alt=""/></figure>
+                      </li>
+                    </ul>
+                    <nav> <span class="fa nav-prev"></span> <span class="fa nav-next"></span> <span class="fa nav-close"></span> </nav>
+                  </section>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="boxes">
-          <div class="box">
-            <div class="topic">FIGMA</div>
-            <div class="per">95%</div>
-          </div>
-          <div class="box">
-            <div class="topic">FLUTTER</div>
-            <div class="per">90%</div>
-          </div>
-          <div class="box">
-            <div class="topic">DART</div>
-            <div class="per">90%</div>
-          </div>
-          <div class="box">
-            <div class="topic">FIREBASE</div>
-            <div class="per">85%</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      </article>
+      
+      <!-- Contact -->
+      <article class="content contact gray-bg" id="chaptercontact">
+        <div class="inner">
+          <h2>Contact</h2>
+          <div class="title-divider"></div>
+          <h3>Let's Keep In Touch</h3>
+          <p>Please Feel Free to Reach Out if You Have Any Questions</p>
+          <div class="full-divider"></div>
+          <div class="contact-con margin-top50">
+            <div class="container-sub">
+              <div class="row">
+                <div class="contact-details">
+                  <div class="col-6">
+                    <div class="contact-text">
+                      <div class="col-2 icon-block address"><i class="fa fa-map-marker"></i></div>
+                      <div class="flot-left"> <strong>UIA Gombak</strong><br>
+                        Mahallah Uthman, Jalan Gombak <br>
+                         53100, Selangor.</div>
+                    </div>
+                    <div class="contact-text">
+                      <div class="col-2 icon-block phone"><i class="fa fa-phone"></i></div>
+                      <div class="flot-left"> <strong>Phone</strong><br>
+                        +60 11-27155650 </div>
+                    </div>
+                    <div class="contact-text">
+                      <div class="col-2 icon-block email"><i class="fa fa-envelope"></i></div>
+                      <div class="flot-left"> <strong>Email</strong><br>
+                        <a href="mailto:shikder.parves@live.iium.edu.my">shikder.parves@live.iium.edu.my</a> </div>
+                    </div>
+                  </div>
+                  <div class="col-6 m-margin-top30">
+                    <h3>I'm also on Social Networks</h3>
+                    
+                    <div class="contact-social margin-top30">  <a href="https://www.youtube.com/channel/UCqpky7W7w4l7tGmekaPtz-A/videos" target="_blank"><i class="fa fa-youtube"></i></a><a href="https://www.linkedin.com/in/parvesshikder/" target="_blank"><i class="fa fa-linkedin"></i></a> </a><a href="https://www.linkedin.com/in/parvesshikder/" target="_blank"><i class="fa fa-github"></i></a> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="full-divider"></div>
+            <div class="container-sub">
+              <div class="row">
+                <div class="contact-form">
+                  <!-- <h3>Drop Me a Line</h3>
+                  <form id="form1" name="form1" method="post" >
+                    <input name="name" type="text" id="name" placeholder="Your Name..." />
+                    <input name="email" type="text" id="email" placeholder="Your Email..." />
+                    <textarea name="message" id="message" cols="45" rows="5" placeholder="Your Message..."></textarea>
+                    <input type="submit" name="button" id="button" value="say hello!" >
+                    <div id="successmsg" ></div>
+                  </form> -->
 
-  <!-- My Services Section Start -->
-  <section class="services" id="services">
-    <div class="content">
-      <div class="title"><span>My Services</span></div>
-      <div class="boxes">
-        <div class="box">
-          <div class="icon">
-            <i class="fas fa-pen-nib"></i>
-          </div>
-          <div class="topic">UI/UX Design</div>
-          <p>I will create a UI design that is modern, unique, professional, and easy to use for your Mobile App Design
-            project.</p>
-        </div>
-        <div class="box">
-          <div class="icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <div class="topic">Mobile App Development</div>
-          <p>I'll bring your dream mobile app idea to life using flutter, a cutting-edge technology.</p>
-        </div>
-        <div class="box">
-          <div class="icon">
-            <i class="fas fa-bug"></i>
-          </div>
-          <div class="topic">Flutter Apps Bug Fixing</div>
-          <p>I'll fix your flutter app's bug so it can operate properly and fully functionally again.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Portfolio -->
-  <section class="gallery portfolio" id="portfolio">
-    <div class="title" style=" font-family: 'Ubuntu', sans-serif;
-  "><span>My Portfolio</span></div>
-    <div class="container">
-      <div class="row">
-        <div class="gallery-filter" style="font-family: 'Ubuntu', sans-serif;
-      ">
-          <span class="filter-item active" data-filter="all">all</span>
-          <span class="filter-item" data-filter="ui">Mobile UI/UX</span>
-          <span class="filter-item" data-filter="app">Flutter App</span>
-        </div>
-      </div>
-
-      <div class="row">
-
-
-
-        <div class="gallery-item ui">
-          <div class="gallery-item-inner">
-            <p class="text-center">
-                <iframe width="100%" height="245px" src="https://www.youtube.com/embed/RblXuJaCPJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </p>
-            
+                  <a href="https://www.linkedin.com/in/parvesshikder/" class="button7" style="background-color:#7DBA5C; margin-top: 20px">
+                    <span style="font-size:3em; font-family:'Comic Sans MS'; border-right:1px solid rgba(255,255,255,0.5); padding-right:0.3em; margin-right:0.3em; vertical-align:middle"> 
+                     
+                    </span>
+                    Let's Chat
+                    </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-<!--  -->
-
-        <div class="gallery-item ui app">
-            <div class="gallery-item-inner">
-              <p class="text-center">
-                <iframe width="100%" height="245px" src="https://www.youtube.com/embed/zW7v0jK562s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              </p>
+      </article>
+      
+      <!-- Introduction -->
+       <!-- <article class="content introduction-end" id="chapterthankyou">
+        <div class="inner">
+          <div class="introduction-end-con">
+            <h3><strong>Parves Shikder</strong></h3>
+            <div id="rotate" class="rotate">
+              <div><span>enthusiastic.</span></div>
+              <div><span>self motivated.</span></div>
               
             </div>
           </div>
-
-
-        <div class="gallery-item ui">
-          <div class="gallery-item-inner">
-            <p class="text-center">
-                <iframe width="100%" height="245px" src="https://www.youtube.com/embed/C6LhA2TqgMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </p>
-            
-          </div>
         </div>
-
-
-        <div class="gallery-item ui">
-          <div class="gallery-item-inner">
-            <p class="text-center">
-                <iframe width="100%" height="245px" src="https://www.youtube.com/embed/Mid6AMVEUyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </p>
-            
-          </div>
-        </div>
-
-        <div class="gallery-item ui">
-          <div class="gallery-item-inner">
-            <p class="text-center">
-                <iframe width="100%" height="245px" src="https://www.youtube.com/embed/UNeRuARGueQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </p>
-            
-          </div>
-        </div>
-
-
-        <div class="gallery-item ui">
-          <div class="gallery-item-inner">
-            <p class="text-center">
-                <iframe width="100%" height="245px" src="https://www.youtube.com/embed/80--HEzcBmM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </p>
-            
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-
-        <!-- gallery item end -->
-      </div>
+      </article>  -->
     </div>
-  </section>
-
-
-  <!-- Port -->
-
-
-  <!-- Contact Me section Start -->
-  <section class="contact" id="contact">
-    <div class="content">
-      <div class="title"><span>Contact Me</span></div>
-      <div class="text">
-        <div class="topic">Have Any Project?</div>
-        <p>
-          <b style="color: #4070f4;">Let's get started?</b> <br> <br>
-
-
-          <i>If you don't have your requirements ready, No worries, please send me a message
-            so
-            we
-            can talk about
-            them.</i>
-
-        </p>
-        <div class="button">
-            <a href="https://www.upwork.com/freelancers/~01fc262ce231cb9e9c">
-          <button>Let's Chat</button>
-        </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer Section Start -->
-  <footer>
-    <div class="text">
-      <span>Created By <a href="#">Parves Shikder</a> | &#169; 2021 All Rights Reserved</span>
-    </div>
-  </footer>
-
-
-  <script>
-    // Sticky Navigation Menu JS Code
-    let nav = document.querySelector("nav");
-    let scrollBtn = document.querySelector(".scroll-button a");
-    console.log(scrollBtn);
-    let val;
-    window.onscroll = function () {
-      if (document.documentElement.scrollTop > 20) {
-        nav.classList.add("sticky");
-        scrollBtn.style.display = "block";
-      } else {
-        nav.classList.remove("sticky");
-        scrollBtn.style.display = "none";
-      }
-
-    }
-
-    // Side NavIgation Menu JS Code
-    let body = document.querySelector("body");
-    let navBar = document.querySelector(".navbar");
-    let menuBtn = document.querySelector(".menu-btn");
-    let cancelBtn = document.querySelector(".cancel-btn");
-    menuBtn.onclick = function () {
-      navBar.classList.add("active");
-      menuBtn.style.opacity = "0";
-      menuBtn.style.pointerEvents = "none";
-      body.style.overflow = "hidden";
-      scrollBtn.style.pointerEvents = "none";
-    }
-    cancelBtn.onclick = function () {
-      navBar.classList.remove("active");
-      menuBtn.style.opacity = "1";
-      menuBtn.style.pointerEvents = "auto";
-      body.style.overflow = "auto";
-      scrollBtn.style.pointerEvents = "auto";
-    }
-
-    // Side Navigation Bar Close While We Click On Navigation Links
-    let navLinks = document.querySelectorAll(".menu li a");
-    for (var i = 0; i < navLinks.length; i++) {
-      navLinks[i].addEventListener("click", function () {
-        navBar.classList.remove("active");
-        menuBtn.style.opacity = "1";
-        menuBtn.style.pointerEvents = "auto";
-      });
-    }
-
-
-
-    const filterContainer = document.querySelector(".gallery-filter"),
-      galleryItems = document.querySelectorAll(".gallery-item");
-
-    filterContainer.addEventListener("click", (event) => {
-      if (event.target.classList.contains("filter-item")) {
-        // deactivate existing active 'filter-item'
-        filterContainer.querySelector(".active").classList.remove("active");
-        // activate new 'filter-item'
-        event.target.classList.add("active");
-        const filterValue = event.target.getAttribute("data-filter");
-        galleryItems.forEach((item) => {
-          if (item.classList.contains(filterValue) || filterValue === 'all') {
-            item.classList.remove("hide");
-            item.classList.add("show");
-          }
-          else {
-            item.classList.remove("show");
-            item.classList.add("hide");
-          }
-        });
-      }
-    });
-  </script>
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
-
-  <script>
-    $(document).ready(function () {
-      $('#headerVideoLink').magnificPopup({
-        type: 'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      });
-    });
-
-  </script>
-
-
-
-  <script>
-    $(document).ready(function () {
-      $('#headerVideoLink1').magnificPopup({
-        type: 'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      });
-    });
-
-  </script>
-
-
-  <script>
-    $(document).ready(function () {
-      $('#headerVideoLink2').magnificPopup({
-        type: 'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      });
-    });
-
-  </script>
-
-
-
-  <script>
-    $(document).ready(function () {
-      $('#headerVideoLink3').magnificPopup({
-        type: 'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      });
-    });
-
-  </script>
-
-
-  <script>
-    $(document).ready(function () {
-      $('#headerVideoLink4').magnificPopup({
-        type: 'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      });
-    });
-
-  </script>
-
-
-  <script>
-    $(document).ready(function () {
-      $('#headerVideoLink5').magnificPopup({
-        type: 'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      });
-    });
-
-  </script>
-
-  <script>
-    $(document).ready(function () {
-      $('#headerVideoLink6').magnificPopup({
-        type: 'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-      });
-    });
-
-  </script>
-
-
-
+    <!-- content-wrapper --> 
+  </div>
+  <!-- content-scroller --> 
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/head.min.js"></script>
+<!-- Portfolio Thumbnail --> 
+<script type="text/javascript" src="js/imagesloaded.min.js"></script> 
+<script type="text/javascript" src="js/masonry.min.js"></script> 
+<script type="text/javascript" src="js/class_helper.js"></script> 
+<script type="text/javascript" src="js/grid_gallery.js"></script> 
+<!-- Portfolio Grid --> 
+<script>
+    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+</script>
+<!-- Portfolio Slider--> 
+<script type="text/javascript"  src="js/carousel.js"></script> 
+<script type="text/javascript" src="js/jquery.easypiechart.js"></script> 
+<script type="text/javascript" src="js/text.rotator.js"></script>
+<!-- Page Scrolling --> 
+<script>
+head.js(
+		{ mousewheel : "js/jquery.mousewheel.js" },
+		{ mwheelIntent : "js/mwheelIntent.js" },
+		{ jScrollPane : "js/jquery.jscrollpane.min.js" },
+		{ history : "js/jquery.history.js" },
+		{ stringLib : "js/core.string.js" },
+		{ easing : "js/jquery.easing.1.3.js" },
+		{ smartresize : "js/jquery.smartresize.js" },
+		{ page : "js/jquery.page.js" }
+		);
+</script>  
+<!-- Fit Video --> 
+<script type="text/javascript"  src="js/jquery.fitvids.js"></script>
+<!-- All Javascript Component--> 
+<script src="js/settings.js"></script>
 </body>
-
 </html>
