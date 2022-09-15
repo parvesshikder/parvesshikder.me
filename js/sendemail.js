@@ -27,7 +27,7 @@
                 if(validateForm()){
                  e.preventDefault();
                   $.ajax({type: "POST",
-                          url: "shikder.parves@live.iium.edu.my",
+                          url: "http://www.yourdomain.com/send-email.php",
                           data:$("#form1").serialize(),
                           success:function(result){
                           $("#successmsg").html(result);

@@ -109,7 +109,7 @@ img {
 .flot-right {
     float: right
 }
-button[type="text"], textarea {
+input[type="text"], textarea {
     padding: 15px;
     border: none;
     background-color: #3b3b3b;
@@ -121,7 +121,7 @@ button[type="text"], textarea {
     margin: 20px 0 0;
     -webkit-user-select: text;
 }
-button[type="submit"] {
+input[type="submit"] {
     border: 2px solid #7dba5c;
     background-color: transparent;
     color: #818181;
@@ -136,16 +136,16 @@ button[type="submit"] {
     -webkit-transition-duration: .2s;
     -o-transition-duration: .2s;
 }
-button[type="text"]:focus, textarea:focus {
+input[type="text"]:focus, textarea:focus {
     outline: none;
     color: #545454;
     border: 1px solid #7dba5c;
 }
-button[type="submit"]:hover {
+input[type="submit"]:hover {
     background-color: #7dba5c;
     color: #fff;
 }
-button[type="text"], button[type="email"], button[type="search"], button[type="password"], textarea, button[type="submit"], button[type="button"] {
+input[type="text"], input[type="email"], input[type="search"], input[type="password"], textarea, input[type="submit"], input[type="button"] {
     box-shadow: none !important;
     border-radius: 0px;
     -webkit-appearance: none;
@@ -432,7 +432,7 @@ h5 {
     display: none
 }
 .social {
-    padding: 0 30px;
+    padding: 30px;
     position: absolute;
     top: 619px;
 }
